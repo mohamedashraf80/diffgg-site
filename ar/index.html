@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>diff.gg — مدربك في League of Legends من اختيار البطل لآخر لحظة في المباراة</title>
+<meta name="description" content="diff.gg تطبيق لويندوز للاعبي League of Legends: ترشيح البطل والبيلد الكامل في Champion Select، معلومات اللاعبين في شاشة التحميل، وتقرير واضح بعد كل مباراة. مجاني وبالعربي والإنجليزي.">
+<link rel="icon" href="../icon.png">
+<link rel="alternate" hreflang="en" href="https://diffgg.app/">
+<link rel="alternate" hreflang="ar" href="https://diffgg.app/ar/">
+<style>
+:root{--bg:#0d0f13;--s1:#14171d;--s2:#1a1e26;--line:#ffffff12;--tx:#ecedf0;--tx2:#a3a7b3;--tx3:#6f7480;--gold:#e8be5a;--goldbg:#e8be5a14;--win:#4cc38a;--winbg:#4cc38a14;--loss:#f07178;--lossbg:#f0717814}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:"Segoe UI",Tahoma,system-ui,-apple-system,Roboto,sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased}
+a{color:var(--gold);text-decoration:none}a:hover{text-decoration:underline}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+header{position:sticky;top:0;z-index:5;background:#0d0f13e6;backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;gap:12px;height:64px}
+header img{width:30px;height:30px;border-radius:8px}
+.logo{font-weight:800;font-size:19px}.logo span{color:var(--gold)}
+nav{margin-right:auto;display:flex;gap:20px;font-size:14px}nav a{color:var(--tx2)}nav a.lang{color:var(--gold);border:1px solid #e8be5a55;border-radius:8px;padding:0 10px}nav a:hover{color:var(--tx);text-decoration:none}
+.hero{padding:72px 0 40px}
+.badge{display:inline-block;font-size:12.5px;color:var(--gold);background:var(--goldbg);border-radius:999px;padding:4px 12px}
+h1{font-size:44px;line-height:1.15;margin:18px 0 14px;letter-spacing:0}
+.lead{font-size:18px;color:var(--tx2);max-width:760px;margin:0}
+.cta{display:flex;gap:10px;margin-top:26px;flex-wrap:wrap}
+.btn{display:inline-block;background:var(--gold);color:#16130b;font-weight:700;border-radius:10px;padding:11px 20px;font-size:15px}
+.btn.ghost{background:transparent;color:var(--tx2);border:1px solid #ffffff22;font-weight:500}
+.btn:hover{text-decoration:none;filter:brightness(1.07)}
+h2{font-size:28px;margin:72px 0 8px;letter-spacing:0}
+.sub{color:var(--tx2);margin:0 0 22px;max-width:760px}
+.flow{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.step{background:var(--s1);border-radius:16px;padding:20px}
+.step .n{font-size:12px;font-weight:700;color:var(--gold)}
+.step b{display:block;font-size:17px;margin:4px 0 6px}
+.step p{margin:0;color:var(--tx2);font-size:14.5px}
+.feat{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.card{background:var(--s1);border-radius:16px;padding:20px 22px}
+.card h3{margin:0 0 4px;font-size:16.5px}
+.card p{margin:0;color:var(--tx2);font-size:14.5px}
+.card ul{margin:8px 0 0;padding-right:18px;color:var(--tx2);font-size:14.5px}.card li{margin:3px 0}
+.pill{display:inline-block;font-size:11.5px;font-weight:600;border-radius:6px;padding:1px 8px;margin-right:6px;vertical-align:middle}
+.pill.new{background:var(--goldbg);color:var(--gold)}
+.mapbox{display:grid;grid-template-columns:minmax(0,320px) 1fr;gap:28px;align-items:center}
+.steps{margin:0;padding:0;list-style:none}.steps li{display:flex;gap:12px;margin:12px 0}
+.num{flex:none;width:26px;height:26px;border-radius:50%;background:var(--gold);color:#16130b;font-weight:800;display:flex;align-items:center;justify-content:center;font-size:13px}
+.note{color:var(--tx3);font-size:14px}
+table{width:100%;border-collapse:collapse;background:var(--s1);border-radius:16px;overflow:hidden;font-size:14.5px}
+th,td{padding:12px 16px;text-align:right;border-bottom:1px solid var(--line)}
+th{color:var(--tx3);font-weight:600;font-size:13px}
+td.c{text-align:center;width:120px}
+.y{color:var(--win);font-weight:700}.p{color:var(--gold);font-weight:700}
+tr:last-child td{border-bottom:0}
+ul.plain{padding-right:20px;margin:0}ul.plain li{margin:7px 0;color:var(--tx2)}
+.faq details{background:var(--s1);border-radius:14px;padding:14px 18px;margin-bottom:8px}
+.faq summary{cursor:pointer;font-weight:600}.faq p{color:var(--tx2);margin:8px 0 0}
+footer{border-top:1px solid var(--line);margin-top:80px;padding:28px 0 44px;font-size:12.5px;color:var(--tx3)}
+@media(max-width:820px){h1{font-size:32px}.flow,.feat{grid-template-columns:1fr}.mapbox{grid-template-columns:1fr}nav a{display:none}nav a.lang{display:inline-block}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <img src="../icon.png" alt="">
+  <div class="logo" dir="ltr">diff<span>.gg</span></div>
+  <nav><a href="#how">كيف يعمل</a><a href="#features">المميزات</a><a href="#pricing">المجاني والمميز</a><a href="#data">البيانات</a><a href="#privacy">الخصوصية</a><a href="#faq">أسئلة شائعة</a><a class="lang" href="../" lang="en">English</a></nav>
+</div></header>
+
+<main class="wrap">
+<section class="hero">
+  <span class="badge">قيد التطوير — الوصول المبكر قريبًا</span>
+  <h1>مدربك في League of Legends،<br>من اختيار البطل لآخر لحظة في المباراة.</h1>
+  <p class="lead">diff.gg تطبيق لويندوز. في Champion Select يرشّح لك البطل المناسب لهذه المباراة ويبني لك الـ items ضد فريق الخصم. في شاشة التحميل يعرّفك على من تلعب ضده فعلًا. وبعد المباراة يشرح لك كل موتة وكل kill، وفي النسخة المميزة يفتح لك اللحظة نفسها في الـ replay.</p>
+  <div class="cta"><a class="btn" href="#contact">سجّل للوصول المبكر</a><a class="btn ghost" href="#features">شاهد المميزات</a></div>
+</section>
+
+<section id="how">
+  <h2>كيف يعمل</h2>
+  <p class="sub">diff.gg يفتح بنفسه في الوقت المناسب، فلا تحتاج للخروج من اللعبة للبحث عن أي شيء.</p>
+  <div class="flow">
+    <div class="step"><span class="n">١ · CHAMPION SELECT</span><b>اختر وخطّط</b><p>أفضل الأبطال لدورك في هذه المباراة، ثم بيلد كامل بترتيب الشراء، والـ Runes التي ترشّحها Riot، وخطة لعب قصيرة. ويُضاف البيلد إلى المتجر داخل اللعبة.</p></div>
+    <div class="step"><span class="n">٢ · شاشة التحميل</span><b>اعرف من أمامك</b><p>لكل لاعب: كم مرة لعب هذا الدور وهذا البطل في آخر 20 مباراة، ودوره الأساسي، ونسبة فوزه مؤخرًا، ورتبته.</p></div>
+    <div class="step"><span class="n">٣ · بعد المباراة</span><b>اعرف أخطاءك</b><p>تقرير بسيط: لماذا حدثت كل موتة وماذا تفعل في المرة القادمة، وكلّ الـ kills والمعارك والبيلد والتقييم.</p></div>
+  </div>
+</section>
+
+<section id="features">
+  <h2>المميزات</h2>
+  <p class="sub">كل ما يلي متاح بالعربية والإنجليزية.</p>
+  <div class="feat">
+    <div class="card"><h3>ترشيح البطل <span class="pill new">Champion Select</span></h3><p>أفضل ثلاثة أبطال لدورك في هذه المباراة، ولكلٍّ منهم سبب واضح واحد:</p><ul><li>ما ينقص فريقك (magic أو physical damage، أو frontline، أو CC)</li><li>ما يناسب فريق الخصم (tanks، assassins، أو فريق ضعيف التحمّل)</li></ul></div>
+    <div class="card"><h3>بيلد كامل بالترتيب <span class="pill new">Champion Select</span></h3><p>items البداية، ثم الـ boots وخمسة items بترتيب الشراء لبطلك ضد هذا الفريق، ولكلّ item سببه: الأساسيات، والـ boots المناسبة، والرد على من يعالج نفسه والـ assassins والـ CC والـ tanks ونوع الـ damage.</p></div>
+    <div class="card"><h3>البيلد داخل المتجر في اللعبة</h3><p>عندما تثبّت بطلك، يُحفظ البيلد كـ Item Set باسم «diff.gg» في متجر League نفسه، فتتبعه داخل المباراة دون أن تخرج منها. ولا يُمسّ أي Item Set صنعته بنفسك.</p></div>
+    <div class="card"><h3>الـ Runes كما في اللعبة</h3><p>صفحة الـ Runes التي ترشّحها Riot لبطلك ودورك، مرسومة مثل شجرة الـ Runes في League، مع الـ Summoner spells. وبضغطة واحدة تُحفظ كصفحة Runes.</p></div>
+    <div class="card"><h3>خطة اللعب</h3><p>ملاحظات قصيرة وعملية: كيف تلعب اللاين أمام نوع بطل خصمك، وأخطر ما في فريق الخصم، ودورك في المعارك.</p></div>
+    <div class="card"><h3>معلومات اللاعبين في شاشة التحميل</h3><p>لكل لاعب: عدد مبارياته في هذا الدور وبهذا البطل من آخر 20 مباراة، ودوره الأساسي، ونسبة فوزه، ورتبته، مع ملاحظات مثل «لم يلعب jungle في آخر 18 مباراة».</p></div>
+    <div class="card"><h3>شرح كل موتة</h3><p>مصنّفة حسب السبب (gank، وحيدًا بلا فريقك، في معركة، 1v1)، ولكل موتة: ماذا حدث، وماذا تفعل في المرة القادمة، وكم كلّفت فريقك.</p></div>
+    <div class="card"><h3>شاهد اللحظة <span class="pill new">مميز</span></h3><p>بجانب كل موتة وكل kill: زر يفتح الـ replay الرسمي في League قبلها بـ 10 ثوانٍ والكاميرا عليك، ويتوقف بعدها بـ 5 ثوانٍ.</p></div>
+    <div class="card"><h3>الـ kills والمعارك واللاعبون</h3><p>الـ kills التي حصلت عليها (solo kills، multi-kills، shutdowns)، وكل معركة على الخريطة ونتيجتها، وتقييم للاعبين العشرة مع MVP و ACE.</p></div>
+    <div class="card"><h3>الملخص والتقييم</h3><p>ملخص المباراة في أربعة أسطر، وأرقامك مقارنةً بالمعدل المرجعي لدورك، وأهم ثلاثة أشياء تعمل عليها، مع ما يجب فعله في كلٍّ منها.</p></div>
+    <div class="card"><h3>الرتبة والـ LP وإحصائياتك</h3><p>الـ LP التي ربحتها أو خسرتها في كل مباراة، ورسم بياني لها، ونسبة الفوز ومتوسط التقييم لكل بطل، وأفضل ثلاثة أبطال لك في الرانك، ودفتر ملاحظات للمواجهات.</p></div>
+    <div class="card"><h3>كل الأبطال</h3><p>كل الأبطال مقسّمين حسب الدور الأساسي، مع القدرات والنوع والصعوبة ونوع الـ damage.</p></div>
+  </div>
+</section>
+
+<section>
+  <h2>فقط ما تُظهره البيانات</h2>
+  <p class="sub">diff.gg لا يخترع سببًا أبدًا. إذا لم تكفِ البيانات المسجّلة لاستنتاج شيء، يقول التقرير ذلك صراحةً.</p>
+  <div class="mapbox">
+    <svg viewBox="0 0 300 300" role="img" aria-label="A simplified three-lane map showing two recorded positions and a death between them">
+      <rect x="6" y="6" width="288" height="288" rx="18" fill="#14171d"/>
+      <path d="M40 260 L250 50" stroke="#e8be5a" stroke-width="16" stroke-linecap="round" opacity=".12"/>
+      <path d="M40 60 L260 260" stroke="#ffffff" stroke-width="10" opacity=".05"/>
+      <path d="M34 266 V40 H260" fill="none" stroke="#ffffff22" stroke-width="9" stroke-linejoin="round"/>
+      <path d="M34 266 H260 V40" fill="none" stroke="#ffffff22" stroke-width="9" stroke-linejoin="round"/>
+      <circle cx="40" cy="260" r="20" fill="#4cc38a"/><circle cx="260" cy="40" r="20" fill="#f07178"/>
+      <circle cx="120" cy="190" r="12" fill="#e8be5a"/><text x="120" y="195" text-anchor="middle" font-size="13" font-weight="800" fill="#16130b">1</text>
+      <circle cx="160" cy="150" r="12" fill="#f07178"/><text x="160" y="155" text-anchor="middle" font-size="13" font-weight="800" fill="#fff">2</text>
+      <circle cx="200" cy="120" r="12" fill="#e8be5a"/><text x="200" y="125" text-anchor="middle" font-size="13" font-weight="800" fill="#16130b">3</text>
+      <path d="M131 180 L149 160 M171 142 L189 128" stroke="#a3a7b3" stroke-width="3" stroke-dasharray="4 5"/>
+    </svg>
+    <div>
+      <ul class="steps">
+        <li><span class="num">1</span><span><b dir="ltr">13:00</b> — موقع مسجّل. المواقع تُسجَّل تقريبًا كل دقيقة.</span></li>
+        <li><span class="num">2</span><span><b dir="ltr">14:12</b> — موتتك. وقتها ومكانها الدقيقان من أحداث المباراة.</span></li>
+        <li><span class="num">3</span><span><b dir="ltr">15:00</b> — الموقع المسجّل التالي.</span></li>
+      </ul>
+      <p class="note">diff.gg لا يصف ما حدث بين تسجيلين إلا إذا كان كلاهما يدعمه. ولا يذكر فرق الـ level أو الـ gold إلا إذا كان مؤكدًا.</p>
+    </div>
+  </div>
+</section>
+
+<section id="pricing">
+  <h2>المجاني والمميز</h2>
+  <p class="sub">سيبقى لـ diff.gg دائمًا إصدار مجاني كامل: كل التقارير، وكل Champion Select، وشاشة التحميل. النسخة المميزة مخطط لها لاحقًا، وتضيف مراجعة الـ replay ومتابعة تطورك على المدى الطويل، ولا تعطي أي أفضلية داخل المباراة. لا يوجد أي دفع الآن.</p>
+  <table>
+    <tr><th>الميزة</th><th class="c">مجاني</th><th class="c">مميز <span style="font-weight:400">(مخطط له)</span></th></tr>
+    <tr><td>تقرير المباراة: الملخص، الموتات، الـ kills، المعارك، البيلد، التقييم</td><td class="c y">✓</td><td class="c y">✓</td></tr>
+    <tr><td>Champion Select: ترشيح البطل، البيلد الكامل، الـ Runes، خطة اللعب، الـ Item Set</td><td class="c y">✓</td><td class="c y">✓</td></tr>
+    <tr><td>معلومات اللاعبين في شاشة التحميل</td><td class="c y">✓</td><td class="c y">✓</td></tr>
+    <tr><td>الرتبة وسجل الـ LP، إحصائيات الأبطال، كل الأبطال</td><td class="c y">✓</td><td class="c y">✓</td></tr>
+    <tr><td>«شاهد اللحظة»: فتح كل موتة وكل kill في الـ replay</td><td class="c">—</td><td class="c p">✓</td></tr>
+    <tr><td>السجل الكامل وتطورك على المدى الطويل (كل مبارياتك، لا الأخيرة فقط)</td><td class="c">—</td><td class="c p">✓</td></tr>
+    <tr><td>جلسة مراجعة: كل موتات المباراة متتالية في الـ replay</td><td class="c">—</td><td class="c p">✓</td></tr>
+  </table>
+  <p class="note">لن تبدأ النسخة المميزة إلا بعد اعتماد diff.gg في بوابة المطورين لدى Riot Games، كما تشترط سياسات Riot.</p>
+</section>
+
+<section>
+  <h2>ما لن يفعله diff.gg</h2>
+  <ul class="plain">
+    <li>لا overlay ولا نصائح أثناء اللعب، ولا مؤقتات، ولا أي تحكم آلي. المساعدة داخل اللعبة تقتصر على الـ Item Set الذي تفتحه من متجر League نفسه.</li>
+    <li>لا أسماء ولا رتب ولا إحصائيات للاعبين الآخرين أثناء Champion Select — Riot تجعل Champion Select مجهول الهوية، ونحن كذلك. معلومات اللاعبين تظهر فقط في شاشة التحميل حيث الأسماء ظاهرة أصلًا.</li>
+    <li>لا تقديرات للـ MMR أو للتقييم الخفي.</li>
+    <li>لا إعلانات داخل اللعبة أو في شاشة التحميل.</li>
+    <li>لا استنتاجات لا تدعمها البيانات المسجّلة.</li>
+  </ul>
+</section>
+
+<section id="data">
+  <h2>مصدر البيانات</h2>
+  <ul class="plain">
+    <li><b>Riot Games API</b> — Account-V1 (البحث بالـ Riot ID) و Match-V5 (قائمة المباريات وتفاصيلها والـ timelines).</li>
+    <li><b>League Client API</b> (على جهازك) — مبارياتك، وإحصائيات الرانك، وChampion Select، وصفحات الـ Runes، والـ Item Sets، وسجل المباريات المستخدم في شاشة التحميل.</li>
+    <li><b>Live Client Data API</b> (على جهازك) — مواقع اللاعبين بعد بدء المباراة، لتأكيد الأدوار.</li>
+    <li><b>Replay API</b> (على جهازك) — لفتح لحظة معيّنة في الـ replay الرسمي. لا يُفعَّل إلا بعد موافقتك.</li>
+    <li><b>Data Dragon وبيانات اللعبة</b> — أسماء الأبطال والـ items والـ Runes وصورها وأوصافها.</li>
+    <li>التحليل قائم على قواعد ويعمل على جهازك. لا تُرسل أي بيانات مباريات إلى أي خدمة ذكاء اصطناعي. ومفتاح Riot API الخاص بنا يبقى على خادمنا ولا يوجد داخل التطبيق.</li>
+  </ul>
+</section>
+
+<section id="privacy">
+  <h2>الخصوصية والأمان</h2>
+  <ul class="plain">
+    <li>الـ Riot ID الذي تكتبه يُرسل إلى خادمنا فقط للبحث عن حسابك ومبارياتك.</li>
+    <li>تقاريرك وملاحظاتك وإعداداتك تبقى على جهازك.</li>
+    <li>diff.gg لا يغيّر شيئًا في League إلا بطلبك أو ضمن ميزة يمكنك إيقافها: الـ Item Set باسم «diff.gg»، وصفحة Runes باسم «diff.gg» عند الضغط على الزر، وسطر واحد في إعدادات League لتفعيل الـ replay (مع نسخة احتياطية من الملف).</li>
+    <li>الخادم المحلي للتطبيق لا يستجيب إلا لجهازك، ويرفض أي طلب من المواقع.</li>
+    <li>لا نبيع أي بيانات شخصية.</li>
+    <li>حذف التطبيق ومجلد بياناته يزيل كل ما هو محفوظ على جهازك.</li>
+  </ul>
+</section>
+
+<section id="faq" class="faq">
+  <h2>أسئلة شائعة</h2>
+  <details><summary>هل diff.gg مسموح من Riot؟</summary><p>diff.gg يلتزم بسياسات المطورين لدى Riot (لا أفضلية داخل المباراة، واحترام إخفاء الهوية في Champion Select، ولا حاسبات MMR)، وهو مسجّل في بوابة المطورين لدى Riot. ويستخدم واجهات Riot الرسمية وخصائص League نفسها مثل الـ Item Sets والـ replay.</p></details>
+  <details><summary>هل يبطّئ اللعبة؟</summary><p>لا. diff.gg لا يشغّل أي شيء داخل اللعبة، وأثناء المباراة ينتظر فقط انتهاءها.</p></details>
+  <details><summary>ما اللغات المتاحة؟</summary><p>العربية والإنجليزية، للتطبيق كله ولكل تقرير.</p></details>
+  <details><summary>لماذا لا أستطيع مشاهدة لحظة من مباراة قديمة؟</summary><p>Riot تحتفظ بالـ replays للـ patch الحالي فقط. المباريات الأقدم يبقى لها التقرير المكتوب كاملًا.</p></details>
+  <details><summary>كم سيكلّف الاشتراك المميز؟</summary><p>سيُعلن السعر قبل الإطلاق. النسخة المميزة تضيف مراجعة الـ replay (مشاهدة كل موتة وكل kill، وجلسات المراجعة) وسجلّك الكامل على المدى الطويل. وكل ما عدا ذلك يبقى مجانيًا.</p></details>
+</section>
+
+<section id="contact">
+  <h2>تواصل معنا والوصول المبكر</h2>
+  <p class="sub">تريد تجربة diff.gg مبكرًا أو لديك ملاحظات؟ راسلنا على <a href="mailto:mohamedashraf30190@gmail.com" dir="ltr">mohamedashraf30190@gmail.com</a>.</p>
+</section>
+</main>
+
+<footer><div class="wrap">
+  <p dir="ltr" style="text-align:left">diff.gg isn't endorsed by Riot Games and doesn't reflect the views or opinions of Riot Games or anyone officially involved in producing or managing Riot Games properties. Riot Games, and all associated properties are trademarks or registered trademarks of Riot Games, Inc.</p>
+  <p>© 2026 diff.gg</p>
+</div></footer>
+</body>
+</html>
